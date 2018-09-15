@@ -13,7 +13,7 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
 
-        client = Client("faI9AZCIVvQTnsgC","aVpg014O6sXrFq8GSD1sSqU2XAhyGpg2", api_version="2018-09-15" )
+        client = Client("YOUR_INFO","YOUR_INFO", api_version="2018-09-15" )
         currency_code = "USD"
         item_price = client.get_spot_price(currency=currency_code)
         print("Last price was {}".format(item_price.amount))
