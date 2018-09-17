@@ -3,11 +3,15 @@ chardet==3.0.4
 coinbase==2.1.0
 Django==2.1.1
 django-crispy-forms==1.7.2
+factory-boy==2.11.1
+Faker==0.9.1
 gunicorn==19.9.0
 idna==2.7
 psycopg2==2.7.5
 pycryptodome==3.6.6
+python-dateutil==2.7.3
 pytz==2018.5
 requests==2.19.1
 six==1.11.0
+text-unidecode==1.2
 urllib3==1.23
