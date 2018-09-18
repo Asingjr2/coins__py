@@ -3,11 +3,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>JSON INFORMATION</title>
 </head>
 <body>
     <h1>COINBASE PRICE CHECK TEST</h1>
-    <br><hr>
-    <h4>Item Price = {{ price }}</h4>
+    <h2>JSON DATA</h2>
+    <TABLE>
+        <THEAD>
+            <tr>
+                <th>LOW</th>
+                <th>HIGH</th>
+                <th>OPEN</th>
+                <th>CLOSE</th>
+            </tr>
+        </THEAD>
+        {% for bucket in json_stuff %}
+        <tbody>
+            <td>{{ bucket.1 }}</td>
+            <td>{{ bucket.2 }}</td>
+            <td>{{ bucket.3 }}</td>
+            <td>{{ bucket.4 }}</td>
+        </tbody>
+        {% endfor %}
+    </TABLE>
 </body>
 </html>

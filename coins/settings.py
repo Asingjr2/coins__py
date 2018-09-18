@@ -77,14 +77,16 @@ WSGI_APPLICATION = 'coins.wsgi.application'
 DATABASES = {
     'default': {
         # Changing information to allow deploying with docker
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
-        'PORT': 5432,
+
+# ****Not WORKING BELOW...NEED TO RETURN
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': 'postgres',
+        # 'USER': 'postgres',
+        # 'HOST': 'db',
+        # 'PORT': 5432,
     }
 }
 
