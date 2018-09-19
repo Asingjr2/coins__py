@@ -5,7 +5,7 @@ import requests
 
 from ..models import Candle
 
-def UpdateBitcoinPrices(apps, schema_editor):
+def update_bitcoin_prices(apps, schema_editor):
     """Data load for Bitcoin daily price data.
 
     Pulling data from coinbase sandbox api to seed database.
@@ -29,7 +29,7 @@ def UpdateBitcoinPrices(apps, schema_editor):
                 item_close = candle[4], 
                 item_volume = candle[5],
             ) 
-            new_candle.save()   
+
 
 class Migration(migrations.Migration):
 
@@ -38,6 +38,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(UpdateBitcoinPrices),
+        migrations.RunPython(update_bitcoin_prices),
     ]
 

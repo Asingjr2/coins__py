@@ -1,4 +1,4 @@
-# Management command to simulate updates to DB.
+"""Management command to simulate updates to DB."""
 
 from django.core.management.base import BaseCommand, CommandError
 from prices.models import Candle, Trade
@@ -9,12 +9,12 @@ from prices.models import Candle
 
 class Command(BaseCommand):
     """Creating command that will pull data from api automatically."""
-    help = "Updates all favorited stocks in DB"
+    help = "Updates standard coin price data in DB"
 
     def handle(self, *args, **options):
-        """Simulating an api request to coinbase for updated price information. 
-
-        Utilizing same method in migration to pull updated coinbase api information into app db.
+        """Data load for mulitple currency with daily price data.
+        
+        Simulating an api request to coinbase for updated price information. 
         This command uses sandbox environment without unique api for real time data.
         """
         coin_currency_sets = ["BTC-USD", "BTC-EUR", "LTC-EUR", "ETH-EUR" ]
@@ -37,4 +37,3 @@ class Command(BaseCommand):
                     item_close = candle[4], 
                     item_volume = candle[5],
                 ) 
-                new_candle.save()   

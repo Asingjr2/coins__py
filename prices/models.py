@@ -19,10 +19,15 @@ class Candle(models.Model):
     item_volume = models.DecimalField(max_digits=20, decimal_places=10)
     time_created = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        unique_together = (
+            ("item_id", "base_currency", "quote_currency", "time_created"),
+        )
+
 
 class Trade(models.Model):
     time = models.DateTimeField(auto_now=True)
-    trade_id = models.IntegerField()
+    trade_id = models.IntegerField(unique=True)
     price = models.DecimalField(max_digits=20, decimal_places=10)
     size = models.DecimalField(max_digits=20, decimal_places=10)
     side = models.CharField(max_length=4, choices=TRADE_SIDES)
